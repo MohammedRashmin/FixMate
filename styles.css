@@ -1554,21 +1554,26 @@ body {
     padding: 4rem 0;
     background: #fff8e1;
     min-height: 80vh;
+    position: relative;
 }
 
 .download-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
     align-items: center;
-    max-width: 1400px;
+    justify-content: center;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 2rem;
+    gap: 2rem;
 }
 
 .download-left {
-    padding: 1rem 2rem;
-    max-width: 500px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .download-left h2 {
@@ -1682,6 +1687,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.download-right-box {
+    background: white;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.right-box-content {
+    text-align: center;
+}
+
+.right-box-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.right-box-content p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .phone-mockup {
@@ -2057,7 +2091,7 @@ body {
     
     /* App Download Section Responsive */
     .download-content-wrapper {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 2rem;
     }
     
@@ -2077,7 +2111,13 @@ body {
     }
     
     .download-left {
-        padding: 1rem;
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+    }
+    
+    .download-right-box {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
     }
     
     .service-icons {
