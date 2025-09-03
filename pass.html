@@ -12,27 +12,47 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Fi</span><i class="fas fa-tools logo-icon"></i><span class="logo-text">Mate</span>
-                </a>
+            <div class="logo">
+                <span class="logo-text">Fi</span>
+                <i class="fas fa-tools logo-icon"></i>
+                <span class="logo-text">Mate</span>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
+            <ul class="nav-links">
+                <li class="dropdown">
                     <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
+                        <li><a href="pass.html">FixMate Pass <span class="subscription-badge">Subscribe</span></a></li>
                         <li><a href="skilled-labor.html">Skilled Labor</a></li>
                         <li><a href="home-services.html">Home Services</a></li>
                         <li><a href="quick-fix.html">Quick Fix</a></li>
                         <li><a href="heavy-work.html">Heavy Work</a></li>
                         <li><a href="business.html">FixMate for Business</a></li>
-                        <li><a href="pass.html">FixMate Pass</a></li>
                         <li><a href="equipment-rentals.html">Equipment Rentals</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="index.html#partners">Partners</a></li>
-                <li class="nav-item"><a href="index.html#investors">Investors</a></li>
-                <li class="nav-item"><a href="index.html#about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#partners">Partners <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#merchant">Merchant</a></li>
+                    </ul>
+                </li>
+                <li><a href="#news">News</a></li>
+                <li class="dropdown">
+                    <a href="#investors">Investors <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#relations">Investor Relations</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#company">Company</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="nav-toggle">
                 <span class="bar"></span>
@@ -43,141 +63,199 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="service-hero">
+    <section class="pass-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="pass-hero-content">
+                <div class="pass-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>Premium Subscription</span>
+                </div>
                 <h1>FixMate Pass</h1>
-                <p>Unlimited access to all FixMate services with our premium subscription plan. Save money and get priority service.</p>
+                <p class="hero-subtitle">Unlimited access to all FixMate services with our premium subscription plan. Save money and get priority service.</p>
+                
+                <div class="price-highlight">
+                    <div class="price-main">
+                        <span class="currency">LKR</span>
+                        <span class="amount">1,500</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="price-savings">
+                        <i class="fas fa-tag"></i>
+                        <span>Save up to 60% on services</span>
+                    </div>
+                </div>
+                
                 <div class="hero-buttons">
-                    <a href="#subscribe" class="btn btn-primary">Subscribe Now</a>
-                    <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                    <a href="#subscribe" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Get FixMate Pass Now
+                    </a>
+                    <a href="#learn-more" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="FixMate Pass">
+            <div class="pass-hero-visual">
+                <div class="modern-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-logo">
+                                <i class="fas fa-tools"></i>
+                                <span>FixMate</span>
+                            </div>
+                            <div class="card-status">ACTIVE</div>
+                        </div>
+                        <div class="card-title">FixMate Pass</div>
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Unlimited Services</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Priority Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>24/7 Access</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Pass Benefits -->
     <section class="pass-benefits">
-        <div class="container">
+     
             <h2>FixMate Pass Benefits</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-infinity"></i>
+            <div class="benefits-scroll-container">
+                <div class="benefits-scroll">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>Unlimited Services</h3>
+                        <p>Access to all FixMate services without per-service charges</p>
                     </div>
-                    <h3>Unlimited Services</h3>
-                    <p>Access to all FixMate services without per-service charges</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-star"></i>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Priority Service</h3>
+                        <p>Get priority booking and faster response times</p>
                     </div>
-                    <h3>Priority Service</h3>
-                    <p>Get priority booking and faster response times</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-percentage"></i>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Exclusive Discounts</h3>
+                        <p>Special discounts on premium services and equipment rentals</p>
                     </div>
-                    <h3>Exclusive Discounts</h3>
-                    <p>Special discounts on premium services and equipment rentals</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-headset"></i>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Premium Support</h3>
+                        <p>Dedicated customer support with faster response times</p>
                     </div>
-                    <h3>Premium Support</h3>
-                    <p>Dedicated customer support with faster response times</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-calendar-check"></i>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Flexible Scheduling</h3>
+                        <p>Book services up to 30 days in advance with flexible scheduling</p>
                     </div>
-                    <h3>Flexible Scheduling</h3>
-                    <p>Book services up to 30 days in advance with flexible scheduling</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Enhanced Insurance</h3>
+                        <p>Extended insurance coverage for all services and equipment</p>
                     </div>
-                    <h3>Enhanced Insurance</h3>
-                    <p>Extended insurance coverage for all services and equipment</p>
+                    <!-- Duplicate cards for seamless scrolling -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>Unlimited Services</h3>
+                        <p>Access to all FixMate services without per-service charges</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Priority Service</h3>
+                        <p>Get priority booking and faster response times</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Exclusive Discounts</h3>
+                        <p>Special discounts on premium services and equipment rentals</p>
+                    </div>
                 </div>
-            </div>
+          
         </div>
     </section>
 
-    <!-- Pass Plans -->
-    <section class="pass-plans">
+    <!-- Single Pass Plan -->
+    <section class="single-pass-plan">
         <div class="container">
-            <h2>Choose Your FixMate Pass</h2>
-            <div class="plans-grid">
-                <div class="plan-card">
+            <div class="plan-container">
+                <div class="plan-card-single">
                     <div class="plan-header">
-                        <h3>Basic Pass</h3>
                         <div class="plan-price">
                             <span class="currency">LKR</span>
-                            <span class="amount">2,500</span>
+                            <span class="amount">1,500</span>
                             <span class="period">/month</span>
                         </div>
+                        <p class="plan-description">Everything you need for unlimited home services</p>
                     </div>
+                    
                     <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Up to 10 service calls/month</li>
-                            <li><i class="fas fa-check"></i> Standard response time</li>
-                            <li><i class="fas fa-check"></i> Basic support</li>
-                            <li><i class="fas fa-check"></i> 5% discount on additional services</li>
-                            <li><i class="fas fa-check"></i> Standard insurance coverage</li>
-                        </ul>
-                    </div>
-                    <a href="#subscribe" class="btn btn-outline">Choose Basic</a>
-                </div>
-                <div class="plan-card featured">
-                    <div class="plan-badge">Most Popular</div>
-                    <div class="plan-header">
-                        <h3>Premium Pass</h3>
-                        <div class="plan-price">
-                            <span class="currency">LKR</span>
-                            <span class="amount">4,500</span>
-                            <span class="period">/month</span>
+                        <div class="feature-category">
+                            <h4><i class="fas fa-infinity"></i> Unlimited Access</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Unlimited service calls per month</li>
+                                <li><i class="fas fa-check"></i> Access to all FixMate services</li>
+                                <li><i class="fas fa-check"></i> No hidden fees or charges</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-category">
+                            <h4><i class="fas fa-rocket"></i> Priority Service</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Priority booking and scheduling</li>
+                                <li><i class="fas fa-check"></i> Faster response times</li>
+                                <li><i class="fas fa-check"></i> 24/7 customer support</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-category">
+                            <h4><i class="fas fa-shield-alt"></i> Premium Benefits</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Enhanced insurance coverage</li>
+                                <li><i class="fas fa-check"></i> Quality guarantee on all services</li>
+                                <li><i class="fas fa-check"></i> Flexible cancellation policy</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Up to 25 service calls/month</li>
-                            <li><i class="fas fa-check"></i> Priority response time</li>
-                            <li><i class="fas fa-check"></i> Premium support</li>
-                            <li><i class="fas fa-check"></i> 15% discount on additional services</li>
-                            <li><i class="fas fa-check"></i> Enhanced insurance coverage</li>
-                            <li><i class="fas fa-check"></i> Advance booking (30 days)</li>
-                        </ul>
+                    
+                    <div class="plan-cta">
+                        <a href="#subscribe" class="btn btn-primary btn-large">
+                            <i class="fas fa-credit-card"></i>
+                            Subscribe Now - LKR 1,500/month
+                        </a>
+                        <p class="cta-note">
+                            <i class="fas fa-lock"></i>
+                            Secure payment • Cancel anytime • 30-day money-back guarantee
+                        </p>
                     </div>
-                    <a href="#subscribe" class="btn btn-primary">Choose Premium</a>
-                </div>
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Unlimited Pass</h3>
-                        <div class="plan-price">
-                            <span class="currency">LKR</span>
-                            <span class="amount">7,500</span>
-                            <span class="period">/month</span>
-                        </div>
-                    </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Unlimited service calls</li>
-                            <li><i class="fas fa-check"></i> VIP response time</li>
-                            <li><i class="fas fa-check"></i> Dedicated support</li>
-                            <li><i class="fas fa-check"></i> 25% discount on premium services</li>
-                            <li><i class="fas fa-check"></i> Maximum insurance coverage</li>
-                            <li><i class="fas fa-check"></i> Flexible scheduling</li>
-                            <li><i class="fas fa-check"></i> Personal account manager</li>
-                        </ul>
-                    </div>
-                    <a href="#subscribe" class="btn btn-outline">Choose Unlimited</a>
                 </div>
             </div>
         </div>
@@ -259,14 +337,14 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section
     <section class="cta-section">
         <div class="container">
             <h2>Start Saving with FixMate Pass</h2>
             <p>Join thousands of satisfied customers who save money with our subscription service</p>
             <a href="#subscribe" class="btn btn-primary btn-large">Subscribe to FixMate Pass</a>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="footer">

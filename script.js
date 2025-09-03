@@ -32,12 +32,67 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Header background change on scroll
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(102, 126, 234, 0.95)';
-        header.style.backdropFilter = 'blur(20px)';
+    const achievementSection = document.querySelector('.achievement-section');
+    
+    if (achievementSection) {
+        const achievementTop = achievementSection.offsetTop;
+        const achievementBottom = achievementTop + achievementSection.offsetHeight;
+        const scrollPosition = window.scrollY + header.offsetHeight;
+        
+        // If we're in the achievement section (top section), use transparent black with white text
+        if (scrollPosition >= achievementTop && scrollPosition <= achievementBottom) {
+            header.style.background = 'rgba(0, 0, 0, 0.3)';
+            header.style.backdropFilter = 'blur(10px)';
+            header.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+            header.style.color = 'white';
+            // Update logo and nav text colors
+            const logoTexts = header.querySelectorAll('.logo-text');
+            const logoIcon = header.querySelector('.logo-icon');
+            const navLinks = header.querySelectorAll('.nav-links a');
+            logoTexts.forEach(text => text.style.color = 'white');
+            if (logoIcon) logoIcon.style.color = '#007bff';
+            navLinks.forEach(link => link.style.color = 'white');
+        } else {
+            // When outside the achievement section, use white style with black text
+            header.style.background = 'rgba(255, 255, 255, 0.9)';
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.border = '1px solid rgba(0, 0, 0, 0.1)';
+            header.style.color = '#333';
+            // Update logo and nav text colors
+            const logoTexts = header.querySelectorAll('.logo-text');
+            const logoIcon = header.querySelector('.logo-icon');
+            const navLinks = header.querySelectorAll('.nav-links a');
+            logoTexts.forEach(text => text.style.color = '#333');
+            if (logoIcon) logoIcon.style.color = '#007bff';
+            navLinks.forEach(link => link.style.color = '#333');
+        }
     } else {
-        header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        header.style.backdropFilter = 'blur(10px)';
+        // Fallback: simple scroll-based change
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.9)';
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.border = '1px solid rgba(0, 0, 0, 0.1)';
+            header.style.color = '#333';
+            // Update logo and nav text colors
+            const logoTexts = header.querySelectorAll('.logo-text');
+            const logoIcon = header.querySelector('.logo-icon');
+            const navLinks = header.querySelectorAll('.nav-links a');
+            logoTexts.forEach(text => text.style.color = '#333');
+            if (logoIcon) logoIcon.style.color = '#007bff';
+            navLinks.forEach(link => link.style.color = '#333');
+        } else {
+            header.style.background = 'rgba(0, 0, 0, 0.3)';
+            header.style.backdropFilter = 'blur(10px)';
+            header.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+            header.style.color = 'white';
+            // Update logo and nav text colors
+            const logoTexts = header.querySelectorAll('.logo-text');
+            const logoIcon = header.querySelector('.logo-icon');
+            const navLinks = header.querySelectorAll('.nav-links a');
+            logoTexts.forEach(text => text.style.color = 'white');
+            if (logoIcon) logoIcon.style.color = '#007bff';
+            navLinks.forEach(link => link.style.color = 'white');
+        }
     }
 });
 
