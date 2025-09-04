@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FixMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Fi</span><i class="fas fa-tools logo-icon"></i><span class="logo-text">Mate</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
+                        <li><a href="home-services.html">Home Services</a></li>
+                        <li><a href="quick-fix.html">Quick Fix</a></li>
+                        <li><a href="pass.html">FixMate Pass</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#partners">Partners <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="merchant.html">Merchant</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="index.html#news">News</a></li>
+                <li class="nav-item"><a href="index.html#investors">Investors</a></li>
+                <li class="dropdown">
+                    <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                    <h1>Get in Touch</h1>
+                    <p class="hero-subtitle">We're here to help! Reach out to us through any of our channels and we'll get back to you as soon as possible.</p>
+                    <div class="quick-contact">
+                        <div class="quick-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="label">Call Us</span>
+                                <span class="value">+94 11 234 5678</span>
+                            </div>
+                        </div>
+                        <div class="quick-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="label">Email Us</span>
+                                <span class="value">support@fixmate.lk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="contact-cards">
+                        <div class="contact-card card-1">
+                            <i class="fas fa-comments"></i>
+                            <span>Live Chat</span>
+                        </div>
+                        <div class="contact-card card-2">
+                            <i class="fas fa-phone"></i>
+                            <span>Phone Support</span>
+                        </div>
+                        <div class="contact-card card-3">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Send us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Grid -->
+    <section class="contact-methods-grid">
+        <div class="container">
+            <div class="methods-header">
+                <h2>Multiple Ways to Connect</h2>
+                <p>Choose the most convenient way to reach us</p>
+            </div>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p>Speak directly with our support team</p>
+                    <div class="method-details">
+                        <span class="method-label">Call Us</span>
+                        <span class="method-value">+94 11 234 5678</span>
+                    </div>
+                    <div class="method-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 8AM-8PM</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>Send us a detailed message</p>
+                    <div class="method-details">
+                        <span class="method-label">Email Us</span>
+                        <span class="method-value">support@fixmate.lk</span>
+                    </div>
+                    <div class="method-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Response within 24hrs</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <p>Get instant help from our team</p>
+                    <div class="method-details">
+                        <span class="method-label">Chat Now</span>
+                        <span class="method-value">Available 24/7</span>
+                    </div>
+                    <div class="method-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Instant Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Hours Section -->
+    <section class="office-hours">
+        <div class="container">
+            <div class="hours-content">
+                <div class="hours-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Office Hours">
+                </div>
+                <div class="hours-text">
+                    <h2>Office Hours</h2>
+                    <p>Our customer support team is available to help you during these hours.</p>
+                    <div class="hours-schedule">
+                        <div class="schedule-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">10:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                    <a href="#emergency" class="btn btn-outline">Emergency Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
+                        <li><a href="home-services.html">Home Services</a></li>
+                        <li><a href="quick-fix.html">Quick Fix</a></li>
+                        <li><a href="pass.html">FixMate Pass</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#news">News</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li><a href="work.html">Work with Us</a></li>
+                        <li><a href="merchant.html">Merchant Partners</a></li>
+                        <li><a href="#support">Partner Support</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FixMate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
