@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "install-deps": "npm install",
+    "setup": "npm install && node server.js",
+    "restart": "taskkill /f /im node.exe 2>nul & timeout /t 2 /nobreak >nul & node server.js"
   },
   "dependencies": {
     "express": "^4.21.2"
