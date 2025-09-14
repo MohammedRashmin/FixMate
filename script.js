@@ -143,45 +143,158 @@ window.addEventListener('load', () => {
     }
 });
 
-// Counter animation for statistics
-function animateCounter(element, target, duration = 2000) {
+// Enhanced counter animation for statistics
+function animateCounter(element, target, duration = 3000, suffix = '+', prefix = '') {
     let start = 0;
     const increment = target / (duration / 16);
+    const originalText = element.textContent;
     
     function updateCounter() {
         start += increment;
         if (start < target) {
-            element.textContent = Math.floor(start) + '+';
+            const currentValue = Math.floor(start);
+            element.textContent = prefix + currentValue + suffix;
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + '+';
+            element.textContent = prefix + target + suffix;
         }
     }
     updateCounter();
 }
 
-// Observe statistics for counter animation
+// Special animation for rating (clean counting with decimals)
+function animateRating(element, target, duration = 3000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    function updateRating() {
+        start += increment;
+        if (start < target) {
+            const currentValue = (Math.floor(start * 10) / 10).toFixed(1);
+            element.textContent = currentValue + '★';
+            requestAnimationFrame(updateRating);
+        } else {
+            element.textContent = target.toFixed(1) + '★';
+        }
+    }
+    updateRating();
+}
+
+// Special animation for K format (1K to 50K)
+function animateCounterK(element, target, duration = 3000) {
+    let start = 1;
+    const increment = (target - 1) / (duration / 16);
+    
+    function updateCounter() {
+        start += increment;
+        if (start < target) {
+            const currentValue = Math.floor(start);
+            element.textContent = currentValue + 'K+';
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target + 'K+';
+        }
+    }
+    updateCounter();
+}
+
+// Special animation for support (clean typing)
+function animateSupport(element, duration = 2000) {
+    const text = '24/7';
+    let currentIndex = 0;
+    
+    function typeSupport() {
+        if (currentIndex < text.length) {
+            element.textContent = text.substring(0, currentIndex + 1);
+            currentIndex++;
+            setTimeout(typeSupport, duration / text.length);
+        }
+    }
+    typeSupport();
+}
+
+// Enhanced statistics observer with repeatable animations
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumber = entry.target.querySelector('h3');
+            const statNumber = entry.target.querySelector('.stat-number');
+            const statLabel = entry.target.querySelector('.stat-label');
             const text = statNumber.textContent;
-            const number = parseInt(text.replace(/\D/g, ''));
+            
+            // Add entrance animation to the stat item
+            entry.target.style.animation = 'statItemEntrance 0.8s ease forwards';
             
             if (text.includes('★')) {
-                // For rating, don't animate
-                return;
+                // For rating, reset to 0 and animate to 5 stars
+                statNumber.textContent = '0★';
+                setTimeout(() => {
+                    animateRating(statNumber, 5);
+                }, 500);
+            } else if (text.includes('24/7')) {
+                // For support, reset and animate
+                statNumber.textContent = '';
+                setTimeout(() => {
+                    animateSupport(statNumber);
+                }, 500);
+            } else {
+                // For numbers, reset to 1K and animate
+                if (text.includes('K')) {
+                    statNumber.textContent = '1K+';
+                    setTimeout(() => {
+                        animateCounter(statNumber, 50000, 3000, '+', '');
+                    }, 500);
+                } else {
+                    statNumber.textContent = '0';
+                    setTimeout(() => {
+                        animateCounter(statNumber, parseInt(text.replace(/\D/g, '')));
+                    }, 500);
+                }
             }
-            
-            animateCounter(statNumber, number);
-            statsObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
+// Observe all stat items for repeatable animations
 document.querySelectorAll('.stat-item').forEach(stat => {
     statsObserver.observe(stat);
 });
+
+// Also observe the entire download-stats section for better control
+const downloadStatsSection = document.querySelector('.download-stats');
+if (downloadStatsSection) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Reset all stats when section comes into view
+                const statItems = entry.target.querySelectorAll('.stat-item');
+                statItems.forEach((item, index) => {
+                    const statNumber = item.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    
+                    // Reset based on type
+                    if (text.includes('★')) {
+                        statNumber.textContent = '0.0★';
+                        setTimeout(() => {
+                            animateRating(statNumber, 4.8);
+                        }, index * 200 + 500);
+                    } else if (text.includes('24/7')) {
+                        statNumber.textContent = '';
+                        setTimeout(() => {
+                            animateSupport(statNumber);
+                        }, index * 200 + 500);
+                    } else if (text.includes('K')) {
+                        statNumber.textContent = '1K+';
+                        setTimeout(() => {
+                            animateCounterK(statNumber, 50, 3000);
+                        }, index * 200 + 500);
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    sectionObserver.observe(downloadStatsSection);
+}
 
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
