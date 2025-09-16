@@ -389,7 +389,7 @@ body {
 /* Service Icons Section */
 .service-icons {
     background: rgba(59, 130, 246, 0.1);
-    padding: 3rem 0;
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -3167,7 +3167,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -3187,9 +3187,9 @@ body {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: stretch;
 }
 
 .work-badge {
@@ -3215,15 +3215,15 @@ body {
 
 .work-subtitle {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
     line-height: 1.6;
 }
 
 .work-stats {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 .work-stats .stat-item {
@@ -3242,6 +3242,179 @@ body {
     font-size: 0.9rem;
     opacity: 0.8;
     margin-top: 0.5rem;
+}
+
+/* Work hero extras: role highlights + CTA */
+.work-hero-extras {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    max-width: 800px;
+}
+
+.role-highlights {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.role-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.6rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #fff;
+    backdrop-filter: blur(6px);
+}
+
+.role-item i {
+    color: #ffd700;
+}
+
+@media (max-width: 768px) {
+    .work-hero-extras {
+        justify-content: center;
+    }
+}
+
+.work-join-desc {
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Work hero right visual card */
+.work-hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.talent-card, .partner-card {
+    background: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('images/FixMate 3.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    color: #fff;
+    width: 100%;
+    max-width: 420px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background-position 0.6s ease, filter 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.talent-card:hover, .partner-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.3);
+    background-position: 50% 40%;
+    filter: saturate(1.05) brightness(1.05);
+}
+
+.talent-card::after, .partner-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.12), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.12), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.talent-card:hover::after, .partner-card:hover::after {
+    opacity: 1;
+}
+
+.talent-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.talent-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.talent-brand i { color: #ffd700; }
+
+.talent-status {
+    background: linear-gradient(45deg, #00d4ff, #667eea);
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(0, 212, 255, 0.25);
+}
+
+.talent-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+}
+
+.talent-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.talent-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.talent-features i { color: #ffd700; }
+
+.talent-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.6rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .work-hero .container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 .worker-showcase {
@@ -3348,17 +3521,60 @@ body {
     background: rgba(59, 130, 246, 0.1);
 }
 
+/* Open Positions layout tweaks (Work page) */
+.open-positions .position-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.open-positions .category-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.open-positions .category-item i {
+    font-size: 1rem;
+}
+
+.open-positions .category-item span {
+    font-size: 0.95rem;
+}
+
+/* Work page spacing adjustments */
+.why-work {
+    padding: 1.2rem 0 0.8rem;
+}
+
+.why-work .section-header {
+    margin-bottom: 0.8rem;
+}
+
+
+.open-positions .section-header {
+    margin-bottom: 0.8rem;
+}
+
 /* Merchant Page Styles */
 .merchant-hero {
     padding: 3rem 0 2rem;
-    background: linear-gradient(135deg, rgba(86, 171, 47, 0.8) 0%, rgba(168, 230, 207, 0.8) 100%), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=800&fit=crop');
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=800&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -3370,7 +3586,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(255, 107, 107, 0.1) 0%, rgba(254, 202, 87, 0.1) 100%);
+    background: linear-gradient(45deg, rgba(0, 212, 255, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
     z-index: 1;
 }
 
@@ -3378,9 +3594,87 @@ body {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.merchant-hero-right {
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.partner-card {
+    background: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('images/FixMate 4.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    color: #fff;
+    width: 100%;
+    max-width: 420px;
+}
+
+.partner-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.partner-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.partner-brand i { color: #ffd700; }
+
+.partner-status {
+    background: linear-gradient(45deg, #00d4ff, #667eea);
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(0, 212, 255, 0.25);
+}
+
+.partner-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+}
+
+.partner-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.partner-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.merchant-hero-extras .merchant-join-desc {
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.5rem;
 }
 
 .merchant-badge {
@@ -3406,15 +3700,15 @@ body {
 
 .merchant-subtitle {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
     line-height: 1.6;
 }
 
 .merchant-stats {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 .merchant-stats .stat-item {
@@ -3436,10 +3730,8 @@ body {
 }
 
 .merchant-showcase {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 400px;
+    padding: 2.5rem 0;
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .merchant-card {
@@ -3500,8 +3792,9 @@ body {
 
 .merchant-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
+    align-items: stretch;
 }
 
 .merchant-card-small {
@@ -3513,6 +3806,11 @@ body {
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
 }
 
 .merchant-card-small:hover {
@@ -3535,8 +3833,47 @@ body {
 
 /* Why Partner Section */
 .why-partner {
-    padding: 4rem 0;
-    background: rgba(86, 171, 47, 0.1);
+    padding: 2.5rem 0;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.why-partner .section-header {
+    margin-bottom: 1.2rem;
+}
+
+.why-partner .partnership-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.why-partner .benefit-item {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.6rem;
+    min-height: 220px;
+}
+
+.why-partner .benefit-item i {
+    font-size: 2rem;
+    color: #667eea;
+}
+
+.why-partner .benefit-item h3 {
+    margin: 0.2rem 0 0.3rem;
+}
+
+.why-partner .benefit-item p {
+    margin: 0;
+    max-width: 26ch;
 }
 
 /* Responsive Design for Work and Merchant Pages */
@@ -3559,21 +3896,47 @@ body {
 }
 
 /* About Us Pages Styles */
-.about-section,
 .blog-section,
-.faqs-section,
+.faqs-section {
+    padding: 2rem 0;
+    margin-top: 6rem;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.about-section {
+    padding: 2rem 0;
+    background: rgba(59, 130, 246, 0.1);
+}
+
 .contact-section,
-.careers-section,
+.careers-section {
+    padding: 2rem 0;
+    margin-top: 6rem;
+    background: rgba(59, 130, 246, 0.1);
+}
+
 .mission-section,
 .featured-posts,
-.popular-questions,
-.help-center,
 .newsletter-section,
-.contact-methods,
-.office-hours,
+.contact-methods {
+    padding: 2rem 0;
+    background: rgba(59, 130, 246, 0.1);
+}
+
 .why-work-us,
 .open-positions {
-    padding: 4rem 0;
+    padding: 0.5rem 0;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.office-hours {
+    padding: 1.5rem 0;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.popular-questions,
+.help-center {
+    padding: 1.5rem 0;
     background: rgba(59, 130, 246, 0.1);
 }
 
@@ -3594,7 +3957,13 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
+    min-height: 400px;
+}
+
+.why-text {
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .about-image,
@@ -3667,7 +4036,11 @@ body {
 .hours-text,
 .why-text,
 .positions-text {
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 .about-text h2,
@@ -3861,21 +4234,26 @@ body {
 
 /* Benefits List */
 .benefits-list {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .benefit-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.85rem;
     color: #555;
+    padding: 0.1rem 0;
+    min-height: 24px;
+    max-height: 32px;
+    line-height: 1.2;
 }
 
 .benefit-item i {
     color: #00d4ff;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    flex-shrink: 0;
 }
 
 /* Position Categories */
@@ -3887,8 +4265,10 @@ body {
 .about-hero,
 .blog-hero,
 .contact-hero {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    padding: 4rem 0;
+    min-height: 80vh;
+    margin-top: 6rem;
+    background: rgba(59, 130, 246, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -3915,6 +4295,32 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
+}
+
+/* Make About hero full height */
+.about-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* About page spacing overrides (tighter between sections) */
+.about-section,
+.mission-section,
+.values-section {
+    padding: 2rem 0;
+}
+
+.about-content,
+.mission-content,
+.values-content {
+    gap: 2rem;
+}
+
+.about-section .section-header,
+.mission-section .section-header,
+.values-section .section-header {
+    margin-bottom: 1rem;
 }
 
 .hero-badge {
@@ -4039,14 +4445,14 @@ body {
 
 /* Our Story Section */
 .our-story {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: rgba(59, 130, 246, 0.05);
 }
 
 .story-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
@@ -4146,7 +4552,7 @@ body {
 
 /* Contact Form Section */
 .contact-form-section {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background: rgba(59, 130, 246, 0.05);
 }
 
@@ -4225,7 +4631,7 @@ body {
 
 /* Contact Methods Grid */
 .contact-methods-grid {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background: rgba(59, 130, 246, 0.1);
 }
 
@@ -4330,7 +4736,7 @@ body {
 
 /* Blog Articles */
 .featured-articles {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background: rgba(59, 130, 246, 0.05);
 }
 
@@ -5013,6 +5419,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 .skilled-hero::before {

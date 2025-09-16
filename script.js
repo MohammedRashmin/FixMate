@@ -29,72 +29,68 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header background change on scroll
-window.addEventListener('scroll', () => {
+// Header background change on scroll (supports work-hero and achievement-section)
+function updateHeaderAppearance() {
     const header = document.querySelector('.header');
-    const achievementSection = document.querySelector('.achievement-section');
-    
-    if (achievementSection) {
-        const achievementTop = achievementSection.offsetTop;
-        const achievementBottom = achievementTop + achievementSection.offsetHeight;
+    if (!header) return;
+    const topSection = document.querySelector('.work-hero') || document.querySelector('.merchant-hero') || document.querySelector('.achievement-section');
+
+    if (topSection) {
+        const sectionTop = topSection.offsetTop;
+        const sectionBottom = sectionTop + topSection.offsetHeight;
         const scrollPosition = window.scrollY + header.offsetHeight;
-        
-        // If we're in the achievement section (top section), use transparent black with white text
-        if (scrollPosition >= achievementTop && scrollPosition <= achievementBottom) {
-            header.style.background = 'rgba(0, 0, 0, 0.3)';
+
+        // While within the top section, use dark translucent header with light text for contrast
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+            header.style.background = 'rgba(0, 0, 0, 0.35)';
             header.style.backdropFilter = 'blur(10px)';
-            header.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+            header.style.border = '1px solid rgba(255, 255, 255, 0.25)';
             header.style.color = 'white';
-            // Update logo and nav text colors
             const logoTexts = header.querySelectorAll('.logo-text');
             const logoIcon = header.querySelector('.logo-icon');
-            const navLinks = header.querySelectorAll('.nav-links a');
+            const topLevelLinks = header.querySelectorAll('.nav-links > li > a');
+            const dropdownLinks = header.querySelectorAll('.dropdown-menu a');
             logoTexts.forEach(text => text.style.color = 'white');
-            if (logoIcon) logoIcon.style.color = '#007bff';
-            navLinks.forEach(link => link.style.color = 'white');
-        } else {
-            // When outside the achievement section, use white style with black text
-            header.style.background = 'rgba(255, 255, 255, 0.9)';
-            header.style.backdropFilter = 'blur(20px)';
-            header.style.border = '1px solid rgba(0, 0, 0, 0.1)';
-            header.style.color = '#333';
-            // Update logo and nav text colors
-            const logoTexts = header.querySelectorAll('.logo-text');
-            const logoIcon = header.querySelector('.logo-icon');
-            const navLinks = header.querySelectorAll('.nav-links a');
-            logoTexts.forEach(text => text.style.color = '#333');
-            if (logoIcon) logoIcon.style.color = '#007bff';
-            navLinks.forEach(link => link.style.color = '#333');
-        }
-    } else {
-        // Fallback: simple scroll-based change
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.9)';
-            header.style.backdropFilter = 'blur(20px)';
-            header.style.border = '1px solid rgba(0, 0, 0, 0.1)';
-            header.style.color = '#333';
-            // Update logo and nav text colors
-            const logoTexts = header.querySelectorAll('.logo-text');
-            const logoIcon = header.querySelector('.logo-icon');
-            const navLinks = header.querySelectorAll('.nav-links a');
-            logoTexts.forEach(text => text.style.color = '#333');
-            if (logoIcon) logoIcon.style.color = '#007bff';
-            navLinks.forEach(link => link.style.color = '#333');
-        } else {
-            header.style.background = 'rgba(0, 0, 0, 0.3)';
-            header.style.backdropFilter = 'blur(10px)';
-            header.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-            header.style.color = 'white';
-            // Update logo and nav text colors
-            const logoTexts = header.querySelectorAll('.logo-text');
-            const logoIcon = header.querySelector('.logo-icon');
-            const navLinks = header.querySelectorAll('.nav-links a');
-            logoTexts.forEach(text => text.style.color = 'white');
-            if (logoIcon) logoIcon.style.color = '#007bff';
-            navLinks.forEach(link => link.style.color = 'white');
+            if (logoIcon) logoIcon.style.color = '#00d4ff';
+            topLevelLinks.forEach(link => link.style.color = 'white');
+            // Ensure dropdown items stay dark on white menu
+            dropdownLinks.forEach(link => link.style.color = '#333');
+            return;
         }
     }
-});
+
+    // Outside of the top section or if none present
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.9)';
+        header.style.backdropFilter = 'blur(20px)';
+        header.style.border = '1px solid rgba(0, 0, 0, 0.1)';
+        header.style.color = '#333';
+        const logoTexts = header.querySelectorAll('.logo-text');
+        const logoIcon = header.querySelector('.logo-icon');
+        const topLevelLinks = header.querySelectorAll('.nav-links > li > a');
+        const dropdownLinks = header.querySelectorAll('.dropdown-menu a');
+        logoTexts.forEach(text => text.style.color = '#333');
+        if (logoIcon) logoIcon.style.color = '#007bff';
+        topLevelLinks.forEach(link => link.style.color = '#333');
+        dropdownLinks.forEach(link => link.style.color = '#333');
+    } else {
+        header.style.background = 'rgba(0, 0, 0, 0.35)';
+        header.style.backdropFilter = 'blur(10px)';
+        header.style.border = '1px solid rgba(255, 255, 255, 0.25)';
+        header.style.color = 'white';
+        const logoTexts = header.querySelectorAll('.logo-text');
+        const logoIcon = header.querySelector('.logo-icon');
+        const topLevelLinks = header.querySelectorAll('.nav-links > li > a');
+        const dropdownLinks = header.querySelectorAll('.dropdown-menu a');
+        logoTexts.forEach(text => text.style.color = 'white');
+        if (logoIcon) logoIcon.style.color = '#00d4ff';
+        topLevelLinks.forEach(link => link.style.color = 'white');
+        dropdownLinks.forEach(link => link.style.color = '#333');
+    }
+}
+
+window.addEventListener('scroll', updateHeaderAppearance);
+window.addEventListener('load', updateHeaderAppearance);
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -123,7 +119,7 @@ document.querySelectorAll('.service-card, .impact-card, .partner-card, .news-car
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -148,7 +144,7 @@ function animateCounter(element, target, duration = 3000, suffix = '+', prefix =
     let start = 0;
     const increment = target / (duration / 16);
     const originalText = element.textContent;
-    
+
     function updateCounter() {
         start += increment;
         if (start < target) {
@@ -166,7 +162,7 @@ function animateCounter(element, target, duration = 3000, suffix = '+', prefix =
 function animateRating(element, target, duration = 3000) {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     function updateRating() {
         start += increment;
         if (start < target) {
@@ -184,7 +180,7 @@ function animateRating(element, target, duration = 3000) {
 function animateCounterK(element, target, duration = 3000) {
     let start = 1;
     const increment = (target - 1) / (duration / 16);
-    
+
     function updateCounter() {
         start += increment;
         if (start < target) {
@@ -202,7 +198,7 @@ function animateCounterK(element, target, duration = 3000) {
 function animateSupport(element, duration = 2000) {
     const text = '24/7';
     let currentIndex = 0;
-    
+
     function typeSupport() {
         if (currentIndex < text.length) {
             element.textContent = text.substring(0, currentIndex + 1);
@@ -220,10 +216,10 @@ const statsObserver = new IntersectionObserver((entries) => {
             const statNumber = entry.target.querySelector('.stat-number');
             const statLabel = entry.target.querySelector('.stat-label');
             const text = statNumber.textContent;
-            
+
             // Add entrance animation to the stat item
             entry.target.style.animation = 'statItemEntrance 0.8s ease forwards';
-            
+
             if (text.includes('★')) {
                 // For rating, reset to 0 and animate to 5 stars
                 statNumber.textContent = '0★';
@@ -270,7 +266,7 @@ if (downloadStatsSection) {
                 statItems.forEach((item, index) => {
                     const statNumber = item.querySelector('.stat-number');
                     const text = statNumber.textContent;
-                    
+
                     // Reset based on type
                     if (text.includes('★')) {
                         statNumber.textContent = '0.0★';
@@ -292,7 +288,7 @@ if (downloadStatsSection) {
             }
         });
     }, { threshold: 0.5 });
-    
+
     sectionObserver.observe(downloadStatsSection);
 }
 
@@ -301,7 +297,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     const rate = scrolled * -0.5;
-    
+
     if (hero) {
         hero.style.transform = `translateY(${rate}px)`;
     }
@@ -309,34 +305,34 @@ window.addEventListener('scroll', () => {
 
 // Hover effects for service cards
 document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-15px) scale(1.02)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
 // Download button hover effects
 document.querySelectorAll('.download-btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
+    btn.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px) scale(1.05)';
     });
-    
-    btn.addEventListener('mouseleave', function() {
+
+    btn.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
 // News card hover effects
 document.querySelectorAll('.news-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-8px)';
         this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
         this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
     });
@@ -351,7 +347,7 @@ document.querySelectorAll('.worker-card').forEach((card, index) => {
 function validateForm(form) {
     const inputs = form.querySelectorAll('input[required], textarea[required]');
     let isValid = true;
-    
+
     inputs.forEach(input => {
         if (!input.value.trim()) {
             input.style.borderColor = '#ff6b6b';
@@ -360,7 +356,7 @@ function validateForm(form) {
             input.style.borderColor = '#28a745';
         }
     });
-    
+
     return isValid;
 }
 
@@ -368,7 +364,7 @@ function validateForm(form) {
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
-    
+
     setTimeout(() => {
         document.body.style.opacity = '1';
     }, 100);
@@ -396,9 +392,9 @@ function createScrollToTop() {
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     `;
-    
+
     document.body.appendChild(scrollBtn);
-    
+
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
             scrollBtn.style.opacity = '1';
@@ -408,18 +404,18 @@ function createScrollToTop() {
             scrollBtn.style.visibility = 'hidden';
         }
     });
-    
+
     scrollBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
+
     scrollBtn.addEventListener('mouseenter', () => {
         scrollBtn.style.transform = 'translateY(-3px) scale(1.1)';
     });
-    
+
     scrollBtn.addEventListener('mouseleave', () => {
         scrollBtn.style.transform = 'translateY(0) scale(1)';
     });
@@ -471,7 +467,7 @@ if ('IntersectionObserver' in window) {
             }
         });
     });
-    
+
     document.querySelectorAll('img[data-src]').forEach(img => {
         imageObserver.observe(img);
     });
@@ -501,7 +497,7 @@ document.addEventListener('touchend', (e) => {
 function handleSwipe() {
     const swipeThreshold = 50;
     const diff = touchStartY - touchEndY;
-    
+
     if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
             // Swipe up - could be used for navigation
@@ -521,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(30px)';
         section.style.transition = 'all 0.8s ease';
-        
+
         setTimeout(() => {
             section.style.opacity = '1';
             section.style.transform = 'translateY(0)';
