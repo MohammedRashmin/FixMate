@@ -7,6 +7,133 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Compact overrides specific to Careers page */
+        .careers-section,
+        .why-work-us,
+        .open-positions {
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+
+        .careers-content,
+        .why-content,
+        .positions-content {
+            gap: 28px;
+        }
+
+        .careers-text h2,
+        .why-text h2,
+        .positions-text h2 {
+            margin-bottom: 12px;
+            font-size: 2.1rem; /* slightly larger headings */
+        }
+
+        .careers-text p,
+        .why-text p,
+        .positions-text p {
+            margin-bottom: 16px;
+            font-size: 1.05rem; /* slightly larger body text */
+            line-height: 1.65;
+        }
+
+        /* Open Positions: reduce space above/below categories */
+        .positions-text p {
+            margin-bottom: 10px;
+        }
+
+        .careers-text,
+        .why-text,
+        .positions-text {
+            max-width: 560px;
+        }
+
+        .careers-image img,
+        .why-image img,
+        .positions-image img {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .benefits-list {
+            gap: 12px;
+        }
+
+        .benefit-item {
+            padding: 11px 16px;
+            font-size: 1.06rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow: hidden; /* keep icon inside pill */
+        }
+
+        /* Ensure the check icons fit inside the pills */
+        .benefit-item i {
+            font-size: 20px;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 24px;       /* fixed icon box */
+            margin: 0;            /* remove external margins */
+        }
+
+        /* Open Positions: tighten category tag spacing */
+        .position-categories {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 8px; /* row gap, column gap */
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+
+        .category-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 14px;
+            font-size: 1rem;
+            margin: 0;            /* remove any global margins */
+            width: auto;          /* prevent stretching */
+            max-width: max-content;
+            white-space: nowrap;  /* keep chip compact */
+        }
+
+        .positions-text .btn {
+            margin-top: 12px;     /* reduce space above Apply Now */
+            font-size: 1.05rem;
+            padding: 12px 18px;
+        }
+
+        .btn.btn-outline {
+            padding: 10px 16px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .careers-section,
+            .why-work-us,
+            .open-positions {
+                padding-top: 28px;
+                padding-bottom: 28px;
+            }
+
+            .careers-image img,
+            .why-image img,
+            .positions-image img {
+                max-height: 220px;
+            }
+
+            .careers-text,
+            .why-text,
+            .positions-text {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->

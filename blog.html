@@ -7,6 +7,84 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Scoped styles for blog subscribe sections */
+        .blog-subscribe {
+            padding-top: 48px;
+            padding-bottom: 32px;
+        }
+        .subscribe-content h2 {
+            margin-bottom: 16px;
+        }
+        .subscribe-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+        }
+        .blog-subscribe .category-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 14px;
+            font-size: 1rem;
+            border-radius: 9999px;
+            margin: 0;
+            width: auto;
+            max-width: max-content;
+            white-space: nowrap;
+        }
+        .blog-subscribe-details {
+            padding-top: 16px;
+            padding-bottom: 40px;
+        }
+        .subscribe-details-content h2 { margin: 12px 0 8px; }
+        .subscribe-details-content .lead {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .blog-subscribe { padding-top: 32px; padding-bottom: 24px; }
+            .subscribe-chips { gap: 8px 10px; }
+            .blog-subscribe .category-tag { padding: 9px 12px; font-size: 0.98rem; }
+        }
+
+        /* Featured Posts alignment and shadow fixes */
+        .featured-posts .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: stretch; /* make columns equal height */
+        }
+        .featured-posts .featured-text,
+        .featured-posts .featured-image { height: 100%; }
+        .featured-posts .featured-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: none !important; /* remove card shadow if any */
+            text-shadow: none !important; /* global removal fallback */
+            border-radius: 16px;          /* match image corner radius */
+            border: 1px solid rgba(0,0,0,0.06);
+            background: rgba(255,255,255,0.35);
+            overflow: hidden;
+        }
+        .featured-posts .featured-text h2,
+        .featured-posts .featured-text p,
+        .featured-posts .featured-text .category-tag,
+        .featured-posts .featured-text .btn {
+            text-shadow: none !important; /* ensure no text glow */
+        }
+        .featured-posts .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px;         /* match text panel radius */
+        }
+        @media (max-width: 992px) {
+            .featured-posts .featured-content { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -226,30 +304,31 @@ Enter your email to subscribe today.</p>
         </div>
     </section>
 
-    <section class="">
-
-<h2>Why Subscribe to FixMate Blog?</h2>
- <span class="category-tag">Get step-by-step DIY tutorials
-</span>
-                        <span class="category-tag"> Stay updated on Sri Lanka’s home service trends
-</span>
-                        <span class="category-tag"> Access exclusive guides & checklists
-</span>
-                        <span class="category-tag">Be the first to know about FixMate offers
-</span>
+    <section class="blog-subscribe">
+        <div class="container">
+            <div class="subscribe-content">
+                <h2>Why Subscribe to FixMate Blog?</h2>
+                <div class="subscribe-chips">
+                    <span class="category-tag">Get step-by-step DIY tutorials</span>
+                    <span class="category-tag">Stay updated on Sri Lanka’s home service trends</span>
+                    <span class="category-tag">Access exclusive guides & checklists</span>
+                    <span class="category-tag">Be the first to know about FixMate offers</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <h2>Free Download for Subscribers</h2>
-    <h4>Sign up today and get our “Top 10 DIY Fixes Every Sri Lankan Home Needs” e-guide, absolutely free.
-</h4>
-
-<h4>Trusted by 50,000+ Readers Across Sri Lanka 🇱🇰
- Homeowners, students, and professionals already use FixMate Blog to stay informed. Join our growing family!
-</h4>
-
-<h2>Join the Conversation</h2>
-<h4>Our newsletter isn't just updates—it's a community. Share your questions, get featured in articles, and contribute your own home tips!</h4>
+    <section class="blog-subscribe-details">
+        <div class="container">
+            <div class="subscribe-details-content">
+                <h2>Free Download for Subscribers</h2>
+                <p class="lead">Sign up today and get our “Top 10 DIY Fixes Every Sri Lankan Home Needs” e‑guide, absolutely free.</p>
+                <p class="lead">Trusted by 50,000+ Readers Across Sri Lanka 🇱🇰 — homeowners, students, and professionals already use FixMate Blog to stay informed. Join our growing family!</p>
+                <h2>Join the Conversation</h2>
+                <p class="lead">Our newsletter isn't just updates—it's a community. Share your questions, get featured in articles, and contribute your own home tips!</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
