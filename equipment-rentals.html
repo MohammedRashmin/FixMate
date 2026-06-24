@@ -4,80 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipment Rentals - FixMate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Fi</span><i class="fas fa-tools logo-icon"></i><span class="logo-text">Mate</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                        <li><a href="heavy-work.html">Heavy Work</a></li>
-                        <li><a href="business.html">FixMate for Business</a></li>
-                        <li><a href="pass.html">FixMate Pass</a></li>
-                        <li><a href="equipment-rentals.html">Equipment Rentals</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#partners">Partners <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="work.html">Work</a></li>
-                        <li><a href="merchant.html">Merchant</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="index.html#investors">Investors</a></li>
-                <li class="dropdown">
-                    <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+    <div id="site-navbar"></div>
 
-    <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Equipment Rentals</h1>
-                <p>Rent professional-grade tools and equipment for your projects. Quality equipment at affordable rates with delivery and pickup services.</p>
-                <div class="hero-buttons">
-                    <a href="#browse-equipment" class="btn btn-primary">Browse Equipment</a>
-                    <a href="#learn-more" class="btn btn-secondary">Learn More</a>
-                </div>
+    <!-- Hero -->
+    <section class="equip-hero">
+        <div class="equip-hero-bg">
+            <div class="floating-elements">
+                <div class="floating-icon"><i class="fas fa-hammer"></i></div>
+                <div class="floating-icon"><i class="fas fa-tools"></i></div>
+                <div class="floating-icon"><i class="fas fa-truck"></i></div>
+                <div class="floating-icon"><i class="fas fa-bolt"></i></div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop" alt="Equipment Rentals">
+        </div>
+        <div class="container">
+            <div class="equip-hero-content">
+                <div class="equip-hero-text">
+                    <span class="welcome-badge"><i class="fas fa-tools"></i> Professional Equipment</span>
+                    <h1>Rent Professional-Grade <span class="highlight">Equipment</span></h1>
+                    <p>Quality tools and heavy machinery delivered to your site. Affordable daily, weekly, and monthly rates with free pickup service.</p>
+                    <div class="business-stats-bar">
+                        <div class="bstat">
+                            <span class="bstat-num">200+</span>
+                            <span class="bstat-label">Equipment Items</span>
+                        </div>
+                        <div class="bstat-divider"></div>
+                        <div class="bstat">
+                            <span class="bstat-num">Free</span>
+                            <span class="bstat-label">Delivery</span>
+                        </div>
+                        <div class="bstat-divider"></div>
+                        <div class="bstat">
+                            <span class="bstat-num">Same Day</span>
+                            <span class="bstat-label">Availability</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#browse-equipment" class="btn btn-primary"><i class="fas fa-search"></i> Browse Equipment</a>
+                        <a href="#rental-process" class="btn btn-outline"><i class="fas fa-info-circle"></i> How It Works</a>
+                    </div>
+                </div>
+                <div class="equip-hero-visual">
+                    <div class="equip-showcase">
+                        <div class="equip-card-mini">
+                            <i class="fas fa-hammer"></i>
+                            <span>Hand Tools</span>
+                        </div>
+                        <div class="equip-card-mini">
+                            <i class="fas fa-bolt"></i>
+                            <span>Power Tools</span>
+                        </div>
+                        <div class="equip-card-mini">
+                            <i class="fas fa-truck"></i>
+                            <span>Heavy Equipment</span>
+                        </div>
+                        <div class="equip-card-mini">
+                            <i class="fas fa-seedling"></i>
+                            <span>Garden Tools</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Equipment Categories -->
-    <section class="equipment-categories">
+    <section id="browse-equipment" class="equipment-categories">
         <div class="container">
-            <h2>Equipment Categories</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                </div>
+                <h2>Equipment Categories</h2>
+                <p>Browse our wide range of professional equipment available for rent</p>
+            </div>
             <div class="categories-grid">
                 <div class="category-card">
                     <div class="category-icon">
@@ -91,6 +97,7 @@
                         <li>Measuring tools</li>
                         <li>Safety equipment</li>
                     </ul>
+                    <a href="#contact-rental" class="btn-card-link">Rent Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -104,6 +111,7 @@
                         <li>Impact wrenches</li>
                         <li>Rotary hammers</li>
                     </ul>
+                    <a href="#contact-rental" class="btn-card-link">Rent Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -117,6 +125,7 @@
                         <li>Cranes</li>
                         <li>Loaders</li>
                     </ul>
+                    <a href="#contact-rental" class="btn-card-link">Rent Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -130,6 +139,7 @@
                         <li>Pressure washers</li>
                         <li>Ladders & scaffolding</li>
                     </ul>
+                    <a href="#contact-rental" class="btn-card-link">Rent Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -143,6 +153,7 @@
                         <li>Chainsaws</li>
                         <li>Garden tillers</li>
                     </ul>
+                    <a href="#contact-rental" class="btn-card-link">Rent Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -156,6 +167,7 @@
                         <li>Wire strippers</li>
                         <li>Conduit benders</li>
                     </ul>
+                    <a href="#contact-rental" class="btn-card-link">Rent Now <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -164,62 +176,81 @@
     <!-- Popular Equipment -->
     <section class="popular-equipment">
         <div class="container">
-            <h2>Popular Equipment</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-fire"></i>
+                    <span>Most Rented</span>
+                </div>
+                <h2>Popular Equipment</h2>
+                <p>Top-rated equipment chosen by our customers for their projects</p>
+            </div>
             <div class="equipment-grid">
                 <div class="equipment-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Power Drill">
-                    <h3>Power Drill Set</h3>
-                    <p>Professional cordless drill with multiple bits and accessories</p>
-                    <div class="equipment-price">LKR 800/day</div>
-                    <div class="equipment-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(4.8)</span>
+                    <div class="equipment-icon-box">
+                        <i class="fas fa-screwdriver"></i>
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Power Drill Set</h3>
+                        <p>Professional cordless drill with multiple bits and accessories</p>
+                        <div class="equipment-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="equipment-footer">
+                            <div class="equipment-price">LKR 800<span>/day</span></div>
+                            <a href="#contact-rental" class="btn-rent">Rent Now</a>
+                        </div>
                     </div>
                 </div>
                 <div class="equipment-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Pressure Washer">
-                    <h3>Pressure Washer</h3>
-                    <p>High-pressure cleaning equipment for outdoor surfaces</p>
-                    <div class="equipment-price">LKR 1,200/day</div>
-                    <div class="equipment-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(4.9)</span>
+                    <div class="equipment-icon-box">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Pressure Washer</h3>
+                        <p>High-pressure cleaning equipment for outdoor surfaces</p>
+                        <div class="equipment-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="equipment-footer">
+                            <div class="equipment-price">LKR 1,200<span>/day</span></div>
+                            <a href="#contact-rental" class="btn-rent">Rent Now</a>
+                        </div>
                     </div>
                 </div>
                 <div class="equipment-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Lawn Mower">
-                    <h3>Lawn Mower</h3>
-                    <p>Professional-grade lawn mower for large areas</p>
-                    <div class="equipment-price">LKR 1,500/day</div>
-                    <div class="equipment-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(4.7)</span>
+                    <div class="equipment-icon-box">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Lawn Mower</h3>
+                        <p>Professional-grade lawn mower for large areas</p>
+                        <div class="equipment-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="equipment-footer">
+                            <div class="equipment-price">LKR 1,500<span>/day</span></div>
+                            <a href="#contact-rental" class="btn-rent">Rent Now</a>
+                        </div>
                     </div>
                 </div>
                 <div class="equipment-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Paint Sprayer">
-                    <h3>Paint Sprayer</h3>
-                    <p>Professional paint spraying equipment for large projects</p>
-                    <div class="equipment-price">LKR 1,000/day</div>
-                    <div class="equipment-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(4.6)</span>
+                    <div class="equipment-icon-box">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Paint Sprayer</h3>
+                        <p>Professional paint spraying equipment for large projects</p>
+                        <div class="equipment-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="equipment-footer">
+                            <div class="equipment-price">LKR 1,000<span>/day</span></div>
+                            <a href="#contact-rental" class="btn-rent">Rent Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -227,27 +258,41 @@
     </section>
 
     <!-- Rental Process -->
-    <section class="rental-process">
+    <section id="rental-process" class="rental-process">
         <div class="container">
-            <h2>How Equipment Rental Works</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Browse & Select</h3>
-                    <p>Browse our equipment catalog and select the tools you need</p>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-list-ol"></i>
+                    <span>Simple Process</span>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
+                <h2>How Equipment Rental Works</h2>
+                <p>Get the equipment you need in four easy steps</p>
+            </div>
+            <div class="process-steps-new">
+                <div class="process-step-new">
+                    <div class="step-num">1</div>
+                    <div class="step-connector"></div>
+                    <i class="fas fa-search step-icon"></i>
+                    <h3>Browse & Select</h3>
+                    <p>Browse our equipment catalog and select the tools you need for your project</p>
+                </div>
+                <div class="process-step-new">
+                    <div class="step-num">2</div>
+                    <div class="step-connector"></div>
+                    <i class="fas fa-credit-card step-icon"></i>
                     <h3>Book & Pay</h3>
                     <p>Book your equipment and make payment online or on delivery</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Delivery</h3>
+                <div class="process-step-new">
+                    <div class="step-num">3</div>
+                    <div class="step-connector"></div>
+                    <i class="fas fa-truck step-icon"></i>
+                    <h3>We Deliver</h3>
                     <p>We deliver the equipment to your location at the scheduled time</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
+                <div class="process-step-new">
+                    <div class="step-num">4</div>
+                    <i class="fas fa-undo step-icon"></i>
                     <h3>Use & Return</h3>
                     <p>Use the equipment for your project and we'll pick it up when done</p>
                 </div>
@@ -258,7 +303,14 @@
     <!-- Rental Benefits -->
     <section class="rental-benefits">
         <div class="container">
-            <h2>Why Rent Equipment from FixMate?</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Why Rent With Us</span>
+                </div>
+                <h2>Why Rent Equipment from FixMate?</h2>
+                <p>More than just equipment — we deliver a complete rental experience</p>
+            </div>
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <i class="fas fa-dollar-sign"></i>
@@ -295,41 +347,52 @@
     </section>
 
     <!-- Pricing -->
-    <section class="pricing-section">
+    <section class="pricing-section" id="contact-rental">
         <div class="container">
-            <h2>Rental Pricing</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-tag"></i>
+                    <span>Pricing</span>
+                </div>
+                <h2>Rental Pricing</h2>
+                <p>Transparent, affordable rates with no surprise fees</p>
+            </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Daily Rental</h3>
                     <div class="price">From LKR 500<span>/day</span></div>
                     <ul>
-                        <li>Perfect for short projects</li>
-                        <li>Same-day delivery</li>
-                        <li>Basic support</li>
-                        <li>Standard insurance</li>
+                        <li><i class="fas fa-check"></i> Perfect for short projects</li>
+                        <li><i class="fas fa-check"></i> Same-day delivery</li>
+                        <li><i class="fas fa-check"></i> Basic support</li>
+                        <li><i class="fas fa-check"></i> Standard insurance</li>
                     </ul>
+                    <a href="contact.html" class="btn btn-outline">Book Now</a>
                 </div>
                 <div class="pricing-card featured">
+                    <div class="plan-badge">Best Value</div>
                     <h3>Weekly Rental</h3>
                     <div class="price">From LKR 2,500<span>/week</span></div>
                     <ul>
-                        <li>Best value for longer projects</li>
-                        <li>Free delivery & pickup</li>
-                        <li>Priority support</li>
-                        <li>Extended insurance</li>
-                        <li>20% discount on daily rate</li>
+                        <li><i class="fas fa-check"></i> Best value for longer projects</li>
+                        <li><i class="fas fa-check"></i> Free delivery & pickup</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Extended insurance</li>
+                        <li><i class="fas fa-check"></i> 20% discount on daily rate</li>
                     </ul>
+                    <a href="contact.html" class="btn btn-primary">Book Now</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Monthly Rental</h3>
                     <div class="price">From LKR 8,000<span>/month</span></div>
                     <ul>
-                        <li>Ideal for ongoing projects</li>
-                        <li>Free delivery & pickup</li>
-                        <li>Dedicated support</li>
-                        <li>Full insurance coverage</li>
-                        <li>40% discount on daily rate</li>
+                        <li><i class="fas fa-check"></i> Ideal for ongoing projects</li>
+                        <li><i class="fas fa-check"></i> Free delivery & pickup</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                        <li><i class="fas fa-check"></i> Full insurance coverage</li>
+                        <li><i class="fas fa-check"></i> 40% discount on daily rate</li>
                     </ul>
+                    <a href="contact.html" class="btn btn-outline">Book Now</a>
                 </div>
             </div>
         </div>
@@ -339,58 +402,13 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Rent Equipment?</h2>
-            <p>Browse our equipment catalog and book your rental today</p>
-            <a href="#browse-equipment" class="btn btn-primary btn-large">Browse Equipment Now</a>
+            <p>Browse our catalog and get your equipment delivered today</p>
+            <a href="#browse-equipment" class="btn btn-primary btn-large"><i class="fas fa-tools"></i> Browse Equipment Now</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                        <li><a href="heavy-work.html">Heavy Work</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#news">News</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#safety">Safety</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 FixMate. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <div id="site-footer"></div>
+    <script src="components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

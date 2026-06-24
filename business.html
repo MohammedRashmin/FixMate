@@ -3,120 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FixMate for Business - FixMate</title>
+    <title>FixMate for Business</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Fi</span><i class="fas fa-tools logo-icon"></i><span class="logo-text">Mate</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                        <li><a href="heavy-work.html">Heavy Work</a></li>
-                        <li><a href="business.html">FixMate for Business</a></li>
-                        <li><a href="pass.html">FixMate Pass</a></li>
-                        <li><a href="equipment-rentals.html">Equipment Rentals</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#partners">Partners <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="work.html">Work</a></li>
-                        <li><a href="merchant.html">Merchant</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="index.html#investors">Investors</a></li>
-                <li class="dropdown">
-                    <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+    <div id="site-navbar"></div>
 
-    <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>FixMate for Business</h1>
-                <p>Comprehensive workforce solutions for businesses of all sizes. Scale your operations with our professional service platform.</p>
-                <div class="hero-buttons">
-                    <a href="#contact-sales" class="btn btn-primary">Contact Sales</a>
-                    <a href="#learn-more" class="btn btn-secondary">Learn More</a>
-                </div>
+    <!-- Hero -->
+    <section class="business-hero">
+        <div class="business-hero-bg">
+            <div class="floating-elements">
+                <div class="floating-icon"><i class="fas fa-building"></i></div>
+                <div class="floating-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="floating-icon"><i class="fas fa-users"></i></div>
+                <div class="floating-icon"><i class="fas fa-cogs"></i></div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="FixMate for Business">
+        </div>
+        <div class="container">
+            <div class="business-hero-content">
+                <div class="business-hero-text">
+                    <span class="welcome-badge"><i class="fas fa-briefcase"></i> Enterprise Solutions</span>
+                    <h1>Scale Your Business with <span class="highlight">FixMate</span></h1>
+                    <p>Comprehensive workforce and facility solutions for businesses of all sizes. Trusted by 500+ companies across Sri Lanka.</p>
+                    <div class="business-stats-bar">
+                        <div class="bstat">
+                            <span class="bstat-num">500+</span>
+                            <span class="bstat-label">Companies</span>
+                        </div>
+                        <div class="bstat-divider"></div>
+                        <div class="bstat">
+                            <span class="bstat-num">10K+</span>
+                            <span class="bstat-label">Jobs Done</span>
+                        </div>
+                        <div class="bstat-divider"></div>
+                        <div class="bstat">
+                            <span class="bstat-num">24/7</span>
+                            <span class="bstat-label">Support</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#contact-sales" class="btn btn-primary"><i class="fas fa-phone"></i> Contact Sales</a>
+                        <a href="#solutions" class="btn btn-outline"><i class="fas fa-compass"></i> Explore Solutions</a>
+                    </div>
+                </div>
+                <div class="business-hero-visual">
+                    <div class="biz-showcase">
+                        <div class="biz-card">
+                            <i class="fas fa-building"></i>
+                            <span>Facility Management</span>
+                        </div>
+                        <div class="biz-card">
+                            <i class="fas fa-users"></i>
+                            <span>Staff Augmentation</span>
+                        </div>
+                        <div class="biz-card">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Project Management</span>
+                        </div>
+                        <div class="biz-card">
+                            <i class="fas fa-cogs"></i>
+                            <span>Maintenance Contracts</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Business Solutions -->
-    <section class="business-solutions">
+    <section id="solutions" class="business-solutions">
         <div class="container">
-            <h2>Business Solutions</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Our Services</span>
+                </div>
+                <h2>Business Solutions</h2>
+                <p>End-to-end workforce and facility services tailored to your operational needs</p>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
                     <div class="solution-icon">
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>Facility Management</h3>
-                    <p>Complete facility maintenance and management services</p>
+                    <p>Complete facility maintenance and management services for your premises</p>
                     <ul>
                         <li>Regular maintenance schedules</li>
                         <li>Emergency response services</li>
                         <li>Preventive maintenance programs</li>
                         <li>Facility inspections</li>
                     </ul>
+                    <a href="#contact-sales" class="btn-card-link">Get Started <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Staff Augmentation</h3>
-                    <p>Flexible workforce solutions for your business needs</p>
+                    <p>Flexible workforce solutions for your short-term and long-term needs</p>
                     <ul>
                         <li>Skilled temporary workers</li>
                         <li>Project-based staffing</li>
                         <li>Seasonal workforce</li>
                         <li>Specialized expertise</li>
                     </ul>
+                    <a href="#contact-sales" class="btn-card-link">Get Started <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Project Management</h3>
-                    <p>End-to-end project management for complex business projects</p>
+                    <p>End-to-end project management for complex multi-team business projects</p>
                     <ul>
                         <li>Project planning & execution</li>
                         <li>Resource allocation</li>
                         <li>Progress tracking</li>
                         <li>Quality assurance</li>
                     </ul>
+                    <a href="#contact-sales" class="btn-card-link">Get Started <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">
@@ -130,6 +139,7 @@
                         <li>System maintenance</li>
                         <li>Compliance management</li>
                     </ul>
+                    <a href="#contact-sales" class="btn-card-link">Get Started <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -138,50 +148,65 @@
     <!-- Industry Solutions -->
     <section class="industry-solutions">
         <div class="container">
-            <h2>Industry-Specific Solutions</h2>
-            <div class="industry-grid">
-                <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Manufacturing">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-industry"></i>
+                    <span>Industries We Serve</span>
+                </div>
+                <h2>Industry-Specific Solutions</h2>
+                <p>Specialized services crafted for the unique demands of your industry</p>
+            </div>
+            <div class="industry-grid-new">
+                <div class="industry-card-new">
+                    <div class="industry-icon-wrap">
+                        <i class="fas fa-industry"></i>
+                    </div>
                     <h3>Manufacturing</h3>
-                    <p>Specialized services for manufacturing facilities</p>
+                    <p>Specialized services for manufacturing facilities and production lines</p>
                     <ul>
-                        <li>Equipment maintenance</li>
-                        <li>Production line support</li>
-                        <li>Safety compliance</li>
-                        <li>Quality control</li>
+                        <li><i class="fas fa-check"></i> Equipment maintenance</li>
+                        <li><i class="fas fa-check"></i> Production line support</li>
+                        <li><i class="fas fa-check"></i> Safety compliance</li>
+                        <li><i class="fas fa-check"></i> Quality control</li>
                     </ul>
                 </div>
-                <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Healthcare">
+                <div class="industry-card-new">
+                    <div class="industry-icon-wrap">
+                        <i class="fas fa-hospital"></i>
+                    </div>
                     <h3>Healthcare</h3>
-                    <p>Healthcare facility maintenance and support services</p>
+                    <p>Healthcare facility maintenance and support services meeting strict standards</p>
                     <ul>
-                        <li>Medical equipment maintenance</li>
-                        <li>Facility cleaning</li>
-                        <li>Safety protocols</li>
-                        <li>Emergency repairs</li>
+                        <li><i class="fas fa-check"></i> Medical equipment maintenance</li>
+                        <li><i class="fas fa-check"></i> Facility cleaning</li>
+                        <li><i class="fas fa-check"></i> Safety protocols</li>
+                        <li><i class="fas fa-check"></i> Emergency repairs</li>
                     </ul>
                 </div>
-                <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Retail">
+                <div class="industry-card-new">
+                    <div class="industry-icon-wrap">
+                        <i class="fas fa-store"></i>
+                    </div>
                     <h3>Retail & Hospitality</h3>
-                    <p>Maintenance and support for retail and hospitality businesses</p>
+                    <p>Maintenance and support for retail chains and hospitality businesses</p>
                     <ul>
-                        <li>Store maintenance</li>
-                        <li>Equipment repairs</li>
-                        <li>Cleaning services</li>
-                        <li>Customer support</li>
+                        <li><i class="fas fa-check"></i> Store maintenance</li>
+                        <li><i class="fas fa-check"></i> Equipment repairs</li>
+                        <li><i class="fas fa-check"></i> Cleaning services</li>
+                        <li><i class="fas fa-check"></i> Customer support</li>
                     </ul>
                 </div>
-                <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Office">
+                <div class="industry-card-new">
+                    <div class="industry-icon-wrap">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
                     <h3>Office & Corporate</h3>
-                    <p>Corporate office maintenance and facility services</p>
+                    <p>Corporate office maintenance and professional facility services</p>
                     <ul>
-                        <li>Office maintenance</li>
-                        <li>IT support</li>
-                        <li>Cleaning services</li>
-                        <li>Security services</li>
+                        <li><i class="fas fa-check"></i> Office maintenance</li>
+                        <li><i class="fas fa-check"></i> IT support</li>
+                        <li><i class="fas fa-check"></i> Cleaning services</li>
+                        <li><i class="fas fa-check"></i> Security services</li>
                     </ul>
                 </div>
             </div>
@@ -191,7 +216,14 @@
     <!-- Business Benefits -->
     <section class="business-benefits">
         <div class="container">
-            <h2>Why Choose FixMate for Business?</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Why FixMate</span>
+                </div>
+                <h2>Why Choose FixMate for Business?</h2>
+                <p>We go beyond standard service delivery to become your trusted operational partner</p>
+            </div>
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <i class="fas fa-dollar-sign"></i>
@@ -221,7 +253,7 @@
                 <div class="benefit-item">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Easy Management</h3>
-                    <p>Simple online platform for booking, tracking, and managing services</p>
+                    <p>Simple online platform for booking, tracking, and managing all services</p>
                 </div>
             </div>
         </div>
@@ -230,100 +262,66 @@
     <!-- Pricing Plans -->
     <section class="pricing-section">
         <div class="container">
-            <h2>Business Pricing Plans</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-tag"></i>
+                    <span>Pricing</span>
+                </div>
+                <h2>Business Pricing Plans</h2>
+                <p>Transparent pricing with no hidden fees — pick the plan that fits your business</p>
+            </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter Plan</h3>
                     <div class="price">LKR 15,000<span>/month</span></div>
                     <ul>
-                        <li>Up to 50 service hours</li>
-                        <li>Basic maintenance services</li>
-                        <li>Email support</li>
-                        <li>Monthly reporting</li>
+                        <li><i class="fas fa-check"></i> Up to 50 service hours</li>
+                        <li><i class="fas fa-check"></i> Basic maintenance services</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> Monthly reporting</li>
                     </ul>
+                    <a href="#contact-sales" class="btn btn-outline">Get Started</a>
                 </div>
                 <div class="pricing-card featured">
+                    <div class="plan-badge">Most Popular</div>
                     <h3>Professional Plan</h3>
                     <div class="price">LKR 35,000<span>/month</span></div>
                     <ul>
-                        <li>Up to 150 service hours</li>
-                        <li>All service categories</li>
-                        <li>Priority support</li>
-                        <li>Weekly reporting</li>
-                        <li>Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i> Up to 150 service hours</li>
+                        <li><i class="fas fa-check"></i> All service categories</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Weekly reporting</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
                     </ul>
+                    <a href="#contact-sales" class="btn btn-primary">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Enterprise Plan</h3>
                     <div class="price">Custom<span>/month</span></div>
                     <ul>
-                        <li>Unlimited service hours</li>
-                        <li>Custom solutions</li>
-                        <li>24/7 dedicated support</li>
-                        <li>Real-time reporting</li>
-                        <li>Custom integrations</li>
+                        <li><i class="fas fa-check"></i> Unlimited service hours</li>
+                        <li><i class="fas fa-check"></i> Custom solutions</li>
+                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                        <li><i class="fas fa-check"></i> Real-time reporting</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
                     </ul>
+                    <a href="#contact-sales" class="btn btn-outline">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" id="contact-sales">
         <div class="container">
             <h2>Ready to Transform Your Business?</h2>
-            <p>Get started with FixMate for Business today</p>
-            <a href="#contact-sales" class="btn btn-primary btn-large">Contact Sales Team</a>
+            <p>Talk to our sales team and get a custom plan tailored to your operations</p>
+            <a href="contact.html" class="btn btn-primary btn-large"><i class="fas fa-phone"></i> Contact Sales Team</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                        <li><a href="heavy-work.html">Heavy Work</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#news">News</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#safety">Safety</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 FixMate. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <div id="site-footer"></div>
+    <script src="components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

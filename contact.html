@@ -4,60 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - FixMate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <span class="logo-text">Fi</span>
-                <i class="fas fa-tools logo-icon"></i>
-                <span class="logo-text">Mate</span>
-            </div>
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="pass.html">FixMate Pass <span class="subscription-badge">Subscribe</span></a></li>
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#partners">Partners <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="work.html">Work</a></li>
-                        <li><a href="merchant.html">Merchant</a></li>
-                    </ul>
-                </li>
-                <li><a href="index.html#news">News</a></li>
-                <li class="dropdown">
-                    <a href="#investors">Investors <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#relations">Investor Relations</a></li>
-                        <li><a href="#franchise">Franchise</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <!-- Header (Injected) -->
+    <div id="site-navbar"></div>
 
     <!-- Contact Hero -->
     <section class="contact-hero">
@@ -75,14 +29,14 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <span class="label">Call Us</span>
-                                <span class="value">+94 11 234 5678</span>
+                                <span class="value">0778126099</span>
                             </div>
                         </div>
                         <div class="quick-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <span class="label">Email Us</span>
-                                <span class="value">support@fixmate.lk</span>
+                                <span class="value">hrfixmate@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -115,7 +69,7 @@
                     <h2>Send us a Message</h2>
                     <p>Fill out the form below and we'll get back to you within 24 hours</p>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -135,11 +89,11 @@
                             <label for="subject">Subject</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Select a subject</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="support">Technical Support</option>
-                                <option value="billing">Billing Question</option>
-                                <option value="partnership">Partnership</option>
-                                <option value="other">Other</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Billing Question">Billing Question</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                     </div>
@@ -147,7 +101,8 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-large">
+                    <div id="form-status" style="display:none; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; font-weight: 500; text-align: center;"></div>
+                    <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
                         <i class="fas fa-paper-plane"></i>
                         Send Message
                     </button>
@@ -172,7 +127,7 @@
                     <p>Speak directly with our support team</p>
                     <div class="method-details">
                         <span class="method-label">Call Us</span>
-                        <span class="method-value">+94 11 234 5678</span>
+                        <span class="method-value">0778126099</span>
                     </div>
                     <div class="method-hours">
                         <i class="fas fa-clock"></i>
@@ -187,7 +142,7 @@
                     <p>Send us a detailed message</p>
                     <div class="method-details">
                         <span class="method-label">Email Us</span>
-                        <span class="method-value">support@fixmate.lk</span>
+                        <span class="method-value">hrfixmate@gmail.com</span>
                     </div>
                     <div class="method-hours">
                         <i class="fas fa-clock"></i>
@@ -245,70 +200,51 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="skilled-labor.html">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms & Conditions</a></li>
-                        <li><a href="#join">Join as Partner</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Get in touch</h4>
-                    <ul>
-                        <li><a href="tel:+94743905944"><i class="fas fa-phone"></i> 074 39 05 944</a></li>
-                        <li><a href="mailto:hello@fixmate.lk"><i class="fas fa-envelope"></i> hello@fixmate.lk</a></li>
-                        <li><a href="#location"><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</a></li>
-                        <li><a href="#hours"><i class="fas fa-clock"></i> 9AM - 5PM (Monday - Saturday)</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>FixMate</h4>
-                    <div class="footer-logo">
-                        <div class="logo-icon">🔧</div>
-                        <div class="logo-text">
-                            <span class="logo-name">FIXMATE</span>
-                            <span class="logo-tagline">SEARCH | COMPARE | FIND</span>
-                        </div>
-                    </div>
-                    <p class="footer-description">Uncover, evaluate, and secure your ideal service with FixMate - where your home improvement adventure awaits in just one click.</p>
-                </div>
-            </div>
-            
-            <div class="footer-social">
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>©2025 FixMate.lk. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Footer (Injected) -->
+    <div id="site-footer"></div>
+    
+    <!-- Scripts -->
+    <script src="components.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init('xFi8csYCMk6TKPqUL');
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('form-status');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            const params = {
+                from_name:  document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                phone:      document.getElementById('phone').value || 'Not provided',
+                subject:    document.getElementById('subject').value,
+                message:    document.getElementById('message').value
+            };
+
+            emailjs.send('service_zyfnepl', 'template_4vfumz8', params)
+                .then(function() {
+                    status.style.display = 'block';
+                    status.style.background = '#d4edda';
+                    status.style.color = '#155724';
+                    status.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! We\'ll get back to you within 24 hours.';
+                    document.getElementById('contactForm').reset();
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                }, function() {
+                    status.style.display = 'block';
+                    status.style.background = '#f8d7da';
+                    status.style.color = '#721c24';
+                    status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again or email us directly at hrfixmate@gmail.com';
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                });
+        });
+    </script>
 </body>
 </html>

@@ -1,19 +1,30 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
+// Mobile Menu Toggle - Wait for components to load
+function initializeMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
 
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-});
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    }
+}
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-    });
-});
+function initializeNavLinks() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (navLinks && mobileMenuBtn) {
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+    }
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -474,12 +485,18 @@ if ('IntersectionObserver' in window) {
 }
 
 // Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-    }
-});
+function initializeKeyboardNavigation() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (navLinks && mobileMenuBtn) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        }
+    });
+}
 
 // Add touch gestures for mobile
 let touchStartY = 0;
@@ -524,3 +541,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }, index * 200);
     });
 });
+
+// Wait for components to load and then initialize navigation
+function waitForComponents() {
+    const checkComponents = () => {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn && navLinks) {
+            // Components are loaded, initialize everything
+            initializeMobileMenu();
+            initializeNavLinks();
+            initializeKeyboardNavigation();
+        } else {
+            // Components not ready yet, check again in 100ms
+            setTimeout(checkComponents, 100);
+        }
+    };
+    
+    checkComponents();
+}
+
+// Start checking for components after a short delay
+setTimeout(waitForComponents, 500);

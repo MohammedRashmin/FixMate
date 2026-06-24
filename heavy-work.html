@@ -4,58 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavy Work - FixMate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Fi</span><i class="fas fa-tools logo-icon"></i><span class="logo-text">Mate</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                        <li><a href="heavy-work.html">Heavy Work</a></li>
-                        <li><a href="business.html">FixMate for Business</a></li>
-                        <li><a href="pass.html">FixMate Pass</a></li>
-                        <li><a href="equipment-rentals.html">Equipment Rentals</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#partners">Partners <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="work.html">Work</a></li>
-                        <li><a href="merchant.html">Merchant</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="index.html#investors">Investors</a></li>
-                <li class="dropdown">
-                    <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Header (Injected) -->
+    <div id="site-navbar"></div>
 
     <!-- Hero Section -->
     <section class="service-hero">
@@ -267,53 +223,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="skilled-labor.html">Skilled Labor</a></li>
-                        <li><a href="home-services.html">Home Services</a></li>
-                        <li><a href="quick-fix.html">Quick Fix</a></li>
-                        <li><a href="heavy-work.html">Heavy Work</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#news">News</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#safety">Safety</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 FixMate. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <!-- Footer (Injected) -->
+    <div id="site-footer"></div>
+    
+    <!-- Scripts -->
+    <script src="components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
