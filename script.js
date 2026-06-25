@@ -11,16 +11,36 @@ function initializeMobileMenu() {
     }
 }
 
+// Mobile dropdown tap toggle
+function initializeMobileDropdowns() {
+    if (window.innerWidth > 768) return;
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const dropdown = this.parentElement;
+            const isOpen = dropdown.classList.contains('open');
+            // Close all open dropdowns first
+            document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+            if (!isOpen) {
+                e.preventDefault();
+                dropdown.classList.add('open');
+            }
+        });
+    });
+}
+
 // Close mobile menu when clicking on a link
 function initializeNavLinks() {
     const navLinks = document.querySelector('.nav-links');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    
+
     if (navLinks && mobileMenuBtn) {
         document.querySelectorAll('.nav-links a').forEach(link => {
+            // Skip dropdown parent links — they toggle submenus, not navigate
+            if (link.parentElement.classList.contains('dropdown') && !link.closest('.dropdown-menu')) return;
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
+                document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
             });
         });
     }
@@ -526,8 +546,60 @@ function handleSwipe() {
     }
 }
 
+// Service icons mobile carousel
+function initServiceCarousel() {
+    if (window.innerWidth > 768) return;
+
+    const carousel = document.getElementById('serviceCarousel');
+    const dots = document.querySelectorAll('.carousel-dot');
+    if (!carousel || !dots.length) return;
+
+    let autoTimer;
+
+    function goTo(index) {
+        const itemWidth = carousel.querySelector('.service-icon-item').offsetWidth + 8;
+        carousel.scrollTo({ left: itemWidth * index, behavior: 'smooth' });
+        dots.forEach(d => d.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function getCurrentIndex() {
+        const itemWidth = carousel.querySelector('.service-icon-item').offsetWidth + 8;
+        return Math.round(carousel.scrollLeft / itemWidth);
+    }
+
+    // Sync dots on scroll
+    carousel.addEventListener('scroll', () => {
+        const idx = getCurrentIndex();
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[idx]) dots[idx].classList.add('active');
+    });
+
+    // Dot click
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {
+        goTo(i);
+        resetAuto();
+    }));
+
+    // Auto-advance every 3s
+    function startAuto() {
+        autoTimer = setInterval(() => {
+            const next = (getCurrentIndex() + 1) % dots.length;
+            goTo(next);
+        }, 3000);
+    }
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        startAuto();
+    }
+
+    startAuto();
+}
+
 // Initialize all animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    initServiceCarousel();
     // Add fade-in animation to all sections
     const sections = document.querySelectorAll('section');
     sections.forEach((section, index) => {
@@ -552,6 +624,7 @@ function waitForComponents() {
             // Components are loaded, initialize everything
             initializeMobileMenu();
             initializeNavLinks();
+            initializeMobileDropdowns();
             initializeKeyboardNavigation();
         } else {
             // Components not ready yet, check again in 100ms
